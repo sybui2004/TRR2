@@ -1,0 +1,1 @@
+{"name":"Local: BFS Hàng Đợi","url":"c:\\Users\\MSI-PC\\Documents\\C++\\TRR2\\BFS Hàng Đợi.cpp","tests":[{"id":1709257544463,"input":"5\n\n0 1 0 0 1 \n\n1 0 1 1 1 \n\n0 1 0 1 0 \n\n0 1 1 0 1 \n\n1 1 0 1 0","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\MSI-PC\\Documents\\C++\\TRR2\\BFS Hàng Đợi.cpp","group":"local","local":true}
