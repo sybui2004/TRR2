@@ -12,29 +12,31 @@ bool visited[105];
 
 void dfs(int u)
 {
-    visited[u] = true;
-    for (int i = 1; i <= v; i++)
-        if (a[u][i] == 1 && !visited[i])
-        {
-            dfs(i);
-            return;
-        }
+	visited[u] = true;
+	for (int i = 1; i <= v; i++)
+		if (a[u][i] == 1 && !visited[i])
+			dfs(i);
 }
 
 int main()
 {
-    cin >> v;
-    for (int i = 1; i <= v; i++)
-        for (int j = 1; j <= v; j++)
-            cin >> a[i][j];
+	cin >> v;
+	for (int i = 1; i <= v; i++)
+		for (int j = 1; j <= v; j++)
+			cin >> a[i][j];
 
-    dfs(1);
+	dfs(1);
 
-    for (int i = 1; i <= v; i++)
-        if (!visited[i])
-        {
-            cout << "not strongly connected";
-            return 0;
-        }
-    cout << "strongly connected";
+	for (int i = 1; i <= v; i++)
+	{
+		memset(visited, false, sizeof(visited));
+		dfs(i);
+		for (int i = 1; i <= v; i++)
+			if (!visited[i])
+			{
+				cout << "not strongly connected";
+				return 0;
+			}
+	}
+	cout << "strongly connected";
 }
