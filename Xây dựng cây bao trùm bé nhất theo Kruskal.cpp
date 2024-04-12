@@ -28,9 +28,6 @@ int v, x;
 int par[1005];
 vector<Edge> edges;
 
-
-int par[1005];
-
 int find(int u)
 {
     if (par[u] == u)
