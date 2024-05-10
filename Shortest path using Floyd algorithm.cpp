@@ -11,7 +11,7 @@ int main()
     int v, x;
     cin >> v;
     vector<vector<vector<int>>> path(v + 1, vector<vector<int>>(v + 1));
-    vector<vector<int>> a(v + 1, vector<int>(v + 1, 1e9)), visitable(v + 1, vector<int>(v + 1, 0));
+    vector<vector<int>> a(v + 1, vector<int>(v + 1, 1e9));
     for (int i = 1; i <= v; i++)
     {
         for (int j = 1; j <= v; j++)
@@ -23,12 +23,14 @@ int main()
             else if (x == 0)
                 continue;
             else
-                a[i][j] = x, visitable[i][j] = 1, path[i][j].push_back(i), path[i][j].push_back(j);
+                a[i][j] = x, path[i][j].push_back(i), path[i][j].push_back(j);
         }
         path[i][i].push_back(i);
     }
 
     for (int k = 1; k <= v; k++)
+    {
+        int cnt = 0;
         for (int i = 1; i <= v; i++)
             for (int j = 1; j <= v; j++)
             {
@@ -41,6 +43,7 @@ int main()
                         path[i][j].push_back(path[k][j][l]);
                 }
             }
+    }
 
     for (int i = 1; i <= v; i++)
         for (int j = 1; j <= v; j++)
